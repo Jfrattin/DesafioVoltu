@@ -4,46 +4,53 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="2dp"
     tools:context=".MainActivity">
 
+    <!-- View Normal-->
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/viewMale"
+        android:id="@+id/viewnormal"
         android:layout_width="0dp"
         android:layout_height="150dp"
         android:layout_margin="10dp"
         app:cardCornerRadius="14dp"
         app:cardBackgroundColor="@color/background_app"
-        app:layout_constraintEnd_toStartOf="@+id/viewFemale"
+        app:layout_constraintEnd_toStartOf="@+id/viewturbo"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="147dp"
             android:orientation="vertical">
+
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="14dp"
-                app:tint = "@color/white"
-                android:src="@drawable/ic_male"
-                />
+                android:src="@drawable/normalmode"
+                app:tint="@color/white" />
+
+
         </androidx.appcompat.widget.LinearLayoutCompat>
 
 
     </androidx.cardview.widget.CardView>
 
+    <!-- View Turbo-->
+
     <androidx.cardview.widget.CardView
-        android:id="@+id/viewFemale"
+        android:id="@+id/viewturbo"
         android:layout_width="0dp"
         android:layout_height="150dp"
         android:layout_margin="10dp"
         app:cardCornerRadius="14dp"
         app:cardBackgroundColor="@color/background_Component_selected"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/viewMale"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintStart_toEndOf="@+id/viewnormal"
+        app:layout_constraintTop_toTopOf="parent"
+        >
 
 
         <androidx.appcompat.widget.LinearLayoutCompat
@@ -56,7 +63,7 @@
                 android:layout_height="match_parent"
                 android:layout_margin="14dp"
                 app:tint = "@color/white"
-                android:src="@drawable/ic_female"
+                android:src="@drawable/turbomode"
                 />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
@@ -64,7 +71,197 @@
 
     </androidx.cardview.widget.CardView>
 
+    <!-- View Velocity-->
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/viewvelocidad"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="15dp"
+        android:gravity="center"
+        app:cardBackgroundColor="@color/background_Component"
+        app:cardCornerRadius="14dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/viewnormal"
+        android:orientation="vertical"
+        >
+
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Velocidad (km/H)"
+                android:textColor="@color/title_text"
+                android:textAllCaps="true"
+                android:textSize="25sp"/>
+
+            <TextView
+                android:id="@+id/tvvel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:text="100 km/h"
+                android:textSize="38sp"/>
+
+
+            <com.google.android.material.slider.RangeSlider
+                android:id="@+id/rsvel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:contentDescription="Velocidad"
+                android:stepSize="5"
+                android:valueFrom="10"
+                android:valueTo="100"
+                />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.cardview.widget.CardView>
+
+    <!-- View Carga-->
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/viewCardcarga"
+
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        app:cardBackgroundColor="@color/background_Component"
+        app:cardCornerRadius="14dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/viewvelocidad"
+        android:orientation="vertical"
+        >
+
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Carga (kg)"
+                android:textColor="@color/title_text"
+                android:textAllCaps="true"
+                android:textSize="25sp"/>
+
+            <TextView
+                android:id="@+id/viewcarga"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:text="0 Kilos"
+                android:textSize="38sp"/>
+
+
+            <com.google.android.material.slider.RangeSlider
+                android:id="@+id/rscarga"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:contentDescription="Carga del vehiculo"
+                android:stepSize="5"
+                android:valueFrom="30"
+                android:valueTo="1000"
+
+                />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.cardview.widget.CardView>
+
+    <!-- View Autonomia-->
+
+
+    <androidx.cardview.widget.CardView
+
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="36dp"
+        android:gravity="center"
+        app:cardBackgroundColor="@color/background_Component"
+        app:cardCornerRadius="14dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/viewCardcarga"
+        android:orientation="vertical"
+        >
+
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            >
+
+            <TextView
+
+                android:text="Autonomia (km)"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/title_text"
+                android:textAllCaps="true"
+                android:textSize="25sp"/>
+
+            <TextView
+                android:id="@+id/viewautonomia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:text="150"
+                android:textSize="38sp"/>
+
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/clicklautonomia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+                app:cardCornerRadius="14dp"
+            >
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:background="@color/white"
+                android:layout_margin="2dp"
+                android:textStyle="bold"
+                android:text="Calcular"
+                android:textSize="38sp"/>
+
+
+        </androidx.cardview.widget.CardView>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.cardview.widget.CardView>
 
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
